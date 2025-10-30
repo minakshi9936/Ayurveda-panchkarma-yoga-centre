@@ -159,6 +159,7 @@ export default function Navbar() {
                 )}
               </div>
 
+              {/* Book Appointment */}
               <Link
                 href="https://wa.me/916391421660?text=Hello%20I%20want%20to%20book%20an%20appointment"
                 target="_blank"
@@ -223,6 +224,15 @@ export default function Navbar() {
                   )}
                 </div>
               ))}
+
+              <Link
+                href="https://wa.me/916391421660?text=Hello%20I%20want%20to%20book%20an%20appointment"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block py-3 px-4 bg-accent text-accent-foreground rounded-lg hover:bg-accent/90 flex items-center gap-2 font-medium"
+              >
+                Book Appointment <ArrowRight className="w-5 h-5" />
+              </Link>
             </div>
           </div>
         )}
