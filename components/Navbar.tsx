@@ -11,6 +11,7 @@ import {
   Award,
   ChevronDown,
   Leaf,
+  ArrowRight,
 } from 'lucide-react';
 
 export default function Navbar() {
@@ -157,6 +158,15 @@ export default function Navbar() {
                   </div>
                 )}
               </div>
+
+              <Link
+                href="https://wa.me/916391421660?text=Hello%20I%20want%20to%20book%20an%20appointment"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-4 py-2 bg-accent text-accent-foreground rounded-lg hover:bg-accent/90 flex items-center gap-2 font-medium"
+              >
+                Book Appointment <ArrowRight className="w-5 h-5" />
+              </Link>
             </div>
 
             {/* Right Side */}

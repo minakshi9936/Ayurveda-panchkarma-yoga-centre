@@ -1,18 +1,10 @@
-# TODO: Beautify Treatment Pages
-
-## Overview
-Update all treatment pages in `app/treatments/` to match the beautiful structure of `chronic-pains/page.tsx`, including animations, cards, icons, and detailed sections.
+# TODO: Fix Navbar and Connect Book Appointment to WhatsApp
 
 ## Tasks
-- [x] Update `stomach-problems/page.tsx`: Add full structure with hero, overview, benefits with icons, treatments section, process steps, enhanced CTA
-- [x] Update `piles-surgery/page.tsx`: Add full structure with hero, overview, benefits with icons, treatments section, process steps, enhanced CTA
-- [x] Update `neuro-problems/page.tsx`: Add full structure with hero, overview, benefits with icons, treatments section, process steps, enhanced CTA
-- [x] Update `gynecological/page.tsx`: Add full structure with hero, overview, benefits with icons, treatments section, process steps, enhanced CTA
-- [x] Update `skin-problems/page.tsx`: Complete redesign with all sections (hero, overview, benefits, treatments, process, CTA)
-- [x] Update `detoxification/page.tsx`: Complete redesign with all sections (hero, overview, benefits, treatments, process, CTA)
-- [x] Fine-tune `breathing-issues/page.tsx`: Minor adjustments if needed (already similar)
-- [x] Test all pages: Run the app and verify beautiful rendering
+- [x] Import ArrowRight icon from lucide-react in Navbar.tsx
+- [x] Fix the Book Appointment button structure and change link to WhatsApp URL using phone number +916391421660
+- [ ] Test the navbar functionality (optional, if needed)
 
-## Progress Tracking
-- Started: [Date/Time]
-- Completed: [Date/Time]
+## Notes
+- WhatsApp URL format: https://wa.me/916391421660?text=Hello%20I%20want%20to%20book%20an%20appointment
+- Ensure the button is properly styled and functional.

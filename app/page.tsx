@@ -4,9 +4,8 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import ServiceCard from '@/components/ServiceCard';
 import TestimonialCard from '@/components/TestimonialCard';
+import HeroSlider from '@/components/HeroSlider';
 import { Droplets, Sparkles, Heart, Users, Flower2, Activity, ShieldCheck, HandHeart, Timer } from 'lucide-react';
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
-import Autoplay from 'embla-carousel-autoplay';
 
 export default function Home() {
   const services = [
@@ -69,73 +68,10 @@ export default function Home() {
     },
   ];
 
-  const heroImages = [
-    'https://images.pexels.com/photos/3865792/pexels-photo-3865792.jpeg?auto=compress&cs=tinysrgb&w=1920',
-    'https://images.pexels.com/photos/4056535/pexels-photo-4056535.jpeg?auto=compress&cs=tinysrgb&w=1920',
-    'https://images.pexels.com/photos/6629533/pexels-photo-6629533.jpeg?auto=compress&cs=tinysrgb&w=1920',
-  ];
-
   return (
     <>
       {/* ========= HERO ========= */}
-      <section className="relative h-[600px] md:h-[700px] flex items-center justify-center bg-gradient-to-br from-primary/20 to-accent/20">
-        <Carousel
-          className="w-full h-full"
-          plugins={[
-            Autoplay({
-              delay: 5000,
-            }),
-          ]}
-          opts={{
-            align: 'start',
-            loop: true,
-          }}
-        >
-          <CarouselContent className="-ml-1">
-            {heroImages.map((image, index) => (
-              <CarouselItem key={index} className="pl-1 h-[600px] md:h-[700px]">
-                <div
-                  className="w-full h-full bg-cover bg-center relative"
-                  style={{
-                    backgroundImage: `url(${image})`,
-                  }}
-                >
-                  <div className="absolute inset-0 bg-gradient-to-r from-primary/80 to-primary/60" />
-                </div>
-              </CarouselItem>
-            ))}
-          </CarouselContent>
-
-          <CarouselPrevious className="left-4 top-1/2 -translate-y-1/2" />
-          <CarouselNext className="right-4 top-1/2 -translate-y-1/2" />
-        </Carousel>
-
-        <div className="absolute inset-0 flex items-center justify-center z-10">
-          <div className="text-center text-white px-4 max-w-4xl mx-auto">
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
-              Authentic Panchakarma & Yoga
-              <br />for Holistic Healing
-            </h1>
-            <p className="text-lg md:text-xl mb-8 text-white/90 max-w-2xl mx-auto">
-              Experience the ancient wisdom of Ayurveda combined with modern care. Natural healing for body, mind & spirit.
-            </p>
-
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-lg px-8">
-                <Link href="/contact">Book Appointment</Link>
-              </Button>
-              <Button
-                asChild
-                size="lg"
-                variant="outline"
-                className="text-lg px-8 bg-white/10 backdrop-blur-sm border-white text-white hover:bg-white hover:text-primary"
-              >
-                <Link href="/services">Our Services</Link>
-              </Button>
-            </div>
-          </div>
-        </div>
-      </section>
+      <HeroSlider />
 
       {/* ========= TREATMENTS / SERVICES ========= */}
       <section className="py-16 bg-background">
