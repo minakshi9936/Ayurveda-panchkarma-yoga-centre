@@ -4,6 +4,7 @@ import './globals.css';
 import TopBar from '@/components/TopBar';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import FloatingChat from '@/components/FloatingChat';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -24,6 +25,7 @@ export default function RootLayout({
         <Navbar />
         <main>{children}</main>
         <Footer />
+        <FloatingChat />
       </body>
     </html>
   );

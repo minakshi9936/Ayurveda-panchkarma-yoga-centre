@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import {
   Menu,
   X,
@@ -17,6 +17,7 @@ import {
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  const navRef = useRef<HTMLElement>(null);
 
   // ✅ Updated Dropdown Data
   const treatmentsMenu = [
@@ -49,12 +50,30 @@ export default function Navbar() {
     setActiveDropdown(activeDropdown === menu ? null : menu);
   };
 
+  // Close dropdowns and mobile menu on click outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (navRef.current && !navRef.current.contains(event.target as Node)) {
+        setActiveDropdown(null);
+        setIsOpen(false);
+      }
+    };
+
+    if (activeDropdown || isOpen) {
+      document.addEventListener('mousedown', handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [activeDropdown, isOpen]);
+
   return (
     <header className="w-full bg-primary shadow-sm sticky top-0 z-50">
 
 
       {/* MAIN NAVBAR */}
-      <nav className="bg-primary shadow-md">
+      <nav ref={navRef} className="bg-primary shadow-md">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-20">
             {/* Logo */}
@@ -75,20 +94,20 @@ export default function Navbar() {
               </Link>
 
               {/* Treatments */}
-              <div
-                className="relative group"
-                onMouseEnter={() => setActiveDropdown('treatments')}
-                onMouseLeave={() => setActiveDropdown(null)}
-              >
-                <button className="px-4 py-2 text-primary-foreground font-medium hover:text-accent flex items-center gap-1">
+              <div className="relative">
+                <button
+                  onClick={() => handleDropdownToggle('treatments')}
+                  className="px-4 py-2 text-primary-foreground font-medium hover:text-accent flex items-center gap-1"
+                >
                   Treatments <ChevronDown className="h-4 w-4" />
                 </button>
                 {activeDropdown === 'treatments' && (
-                  <div className="absolute top-full left-0 mt-2 w-64 bg-white shadow-lg rounded-lg border border-gray-100 py-2">
+                  <div className="absolute top-full left-0 mt-2 w-64 bg-white shadow-lg rounded-lg border border-gray-100 py-2 z-50">
                     {treatmentsMenu.map((link) => (
                       <Link
                         key={link.href}
                         href={link.href}
+                        onClick={() => setActiveDropdown(null)}
                         className="block px-4 py-2 text-sm text-gray-700 hover:bg-primary/10 hover:text-primary"
                       >
                         {link.label}
@@ -99,20 +118,20 @@ export default function Navbar() {
               </div>
 
               {/* Therapy */}
-              <div
-                className="relative group"
-                onMouseEnter={() => setActiveDropdown('therapy')}
-                onMouseLeave={() => setActiveDropdown(null)}
-              >
-                <button className="px-4 py-2 text-primary-foreground font-medium hover:text-accent flex items-center gap-1">
+              <div className="relative">
+                <button
+                  onClick={() => handleDropdownToggle('therapy')}
+                  className="px-4 py-2 text-primary-foreground font-medium hover:text-accent flex items-center gap-1"
+                >
                   Therapy <ChevronDown className="h-4 w-4" />
                 </button>
                 {activeDropdown === 'therapy' && (
-                  <div className="absolute top-full left-0 mt-2 w-64 bg-white shadow-lg rounded-lg border border-gray-100 py-2">
+                  <div className="absolute top-full left-0 mt-2 w-64 bg-white shadow-lg rounded-lg border border-gray-100 py-2 z-50">
                     {therapyMenu.map((link) => (
                       <Link
                         key={link.href}
                         href={link.href}
+                        onClick={() => setActiveDropdown(null)}
                         className="block px-4 py-2 text-sm text-gray-700 hover:bg-primary/10 hover:text-primary"
                       >
                         {link.label}
@@ -179,7 +198,7 @@ export default function Navbar() {
         {isOpen && (
           <div className="lg:hidden bg-primary border-t border-primary-foreground/20">
             <div className="px-4 pt-2 pb-4 space-y-1">
-              <Link href="/" className="block py-3 text-primary-foreground hover:text-accent font-medium">
+              <Link href="/" onClick={() => setIsOpen(false)} className="block py-3 text-primary-foreground hover:text-accent font-medium">
                 Home
               </Link>
 
@@ -206,7 +225,10 @@ export default function Navbar() {
                         <Link
                           key={link.href}
                           href={link.href}
-                          onClick={() => setActiveDropdown(null)}
+                          onClick={() => {
+                            setActiveDropdown(null);
+                            setIsOpen(false);
+                          }}
                           className="block py-2 text-sm text-gray-600 hover:text-primary"
                         >
                           {link.label}
@@ -218,17 +240,17 @@ export default function Navbar() {
               ))}
 
               {/* Yoga Link */}
-              <Link href="/yoga" className="block py-3 text-primary-foreground hover:text-accent font-medium">
+              <Link href="/yoga" onClick={() => setIsOpen(false)} className="block py-3 text-primary-foreground hover:text-accent font-medium">
                 Yoga
               </Link>
 
               {/* Packages Link */}
-              <Link href="/packages" className="block py-3 text-primary-foreground hover:text-accent font-medium">
+              <Link href="/packages" onClick={() => setIsOpen(false)} className="block py-3 text-primary-foreground hover:text-accent font-medium">
                 Packages
               </Link>
 
               {/* Reviews & Rewards Link */}
-              <Link href="/reviews-rewards" className="block py-3 text-primary-foreground hover:text-accent font-medium">
+              <Link href="/reviews-rewards" onClick={() => setIsOpen(false)} className="block py-3 text-primary-foreground hover:text-accent font-medium">
                 Reviews & Rewards
               </Link>
 
@@ -236,6 +258,7 @@ export default function Navbar() {
                 href="https://wa.me/916391421660?text=Hello%20I%20want%20to%20book%20an%20appointment"
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => setIsOpen(false)}
                 className="block py-3 px-4 bg-accent text-accent-foreground rounded-lg hover:bg-accent/90 flex items-center gap-2 font-medium"
               >
                 Book Appointment <ArrowRight className="w-5 h-5" />
