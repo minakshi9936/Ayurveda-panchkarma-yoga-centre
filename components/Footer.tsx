@@ -25,13 +25,28 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/services" className="text-sm hover:text-accent transition-colors">
-                  Services
+                <Link href="/treatments/chronic-pains" className="text-sm hover:text-accent transition-colors">
+                  Treatments
                 </Link>
               </li>
               <li>
-                <Link href="/about" className="text-sm hover:text-accent transition-colors">
-                  About Us
+                <Link href="/therapies/abhyanga" className="text-sm hover:text-accent transition-colors">
+                  Therapy
+                </Link>
+              </li>
+              <li>
+                <Link href="/yoga" className="text-sm hover:text-accent transition-colors">
+                  Yoga
+                </Link>
+              </li>
+              <li>
+                <Link href="/packages" className="text-sm hover:text-accent transition-colors">
+                  Packages
+                </Link>
+              </li>
+              <li>
+                <Link href="/reviews-rewards" className="text-sm hover:text-accent transition-colors">
+                  Reviews & Rewards
                 </Link>
               </li>
               <li>

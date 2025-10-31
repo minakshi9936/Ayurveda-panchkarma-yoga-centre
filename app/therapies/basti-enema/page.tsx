@@ -1,105 +1,265 @@
 "use client";
-
-import React from "react";
 import { motion } from "framer-motion";
-import Image from "next/image";
-import SectionWrapper from "@/components/SectionWrapper";
-import { MapPin, Phone, Mail } from "lucide-react";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import {
+  Activity,
+  Heart,
+  Shield,
+  Sparkles,
+  Users,
+  Clock,
+  CheckCircle,
+  ArrowRight,
+} from "lucide-react";
 
-const BastiEnema = () => {
+export default function BastiEnemaPage() {
+  const fadeUp = {
+    hidden: { opacity: 0, y: 30 },
+    visible: { opacity: 1, y: 0 },
+  };
+
+  const container = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: { staggerChildren: 0.1 },
+    },
+  };
+
+  const benefits = [
+    {
+      icon: Activity,
+      title: "Detoxification",
+      description:
+        "Eliminates toxins accumulated in the colon and body",
+    },
+    {
+      icon: Heart,
+      title: "Digestive Health",
+      description: "Reduces constipation & improves metabolism",
+    },
+    {
+      icon: Shield,
+      title: "Pain Relief",
+      description: "Helps relieve lower back pain & joint disorders",
+    },
+    {
+      icon: Sparkles,
+      title: "Balances Vata",
+      description: "Restores harmony of Vata dosha",
+    },
+    {
+      icon: Users,
+      title: "Rejuvenation",
+      description: "Promotes overall body detoxification",
+    },
+    {
+      icon: Clock,
+      title: "Neurological Support",
+      description: "Beneficial for neurological disorders",
+    },
+  ];
+
+  const treatments = [
+    {
+      name: "Basti (Enema) Therapy",
+      description:
+        "Medicated oils or herbal decoctions administered through the rectum for deep cleansing.",
+      duration: "45-60 minutes",
+      benefits: ["Detoxifies body", "Balances Vata", "Improves digestion"],
+    },
+  ];
+
   return (
-    <SectionWrapper>
-      {/* Hero Section */}
-      <motion.section
-        className="relative w-full bg-green-200/20 rounded-2xl overflow-hidden"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-      >
-        <Image
-          src="/images/basti.jpg"
-          alt="Basti Enema"
-          width={800}
-          height={350}
-          className="w-full h-[350px] object-cover rounded-2xl"
+    <div className="min-h-screen bg-gradient-to-br from-green-50 via-white to-green-50">
+      {/* HERO */}
+      <section className="relative h-[80vh] flex flex-col justify-center items-center text-white">
+        <div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{
+            backgroundImage:
+              "url('https://images.pexels.com/photos/3757954/pexels-photo-3757954.jpeg?auto=compress&cs=tinysrgb&w=1920')",
+          }}
         />
+        <div className="absolute inset-0 bg-gradient-to-r from-green-900/90 via-green-800/80 to-green-900/90"></div>
 
         <motion.div
-          className="absolute inset-0 bg-black/45 flex items-center justify-center text-white"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
+          variants={container}
+          initial="hidden"
+          animate="visible"
+          className="relative z-10 text-center max-w-4xl px-6"
         >
-          <h1 className="text-4xl md:text-5xl font-bold">Basti (Enema)</h1>
-        </motion.div>
-      </motion.section>
+          <motion.div variants={fadeUp}>
+            <Badge className="bg-white/20 text-white border-white/30 mb-4">
+              Ayurvedic Therapy
+            </Badge>
+          </motion.div>
 
-      {/* Description */}
-      <motion.section
-        className="mt-10 space-y-6"
-        initial={{ opacity: 0, y: 60 }}
-        animate={{ opacity: 1, y: 0 }}
-      >
-        <h2 className="text-3xl font-bold">What is Basti (Enema)?</h2>
-
-        <p className="text-gray-700 leading-relaxed text-lg">
-          Basti therapy is an Ayurvedic Panchakarma procedure focused on detoxifying
-          the colon and balancing Vata dosha through medicated herbal decoctions or
-          oils introduced into the rectum. It helps remove toxins and alleviates
-          several chronic disorders.
-        </p>
-
-        <p className="text-gray-700 leading-relaxed text-lg">
-          It is considered one of the most effective treatments for neuro-muscular
-          issues, joint pain, constipation, and digestive problems.
-        </p>
-
-        <h2 className="text-2xl font-bold mt-6">Benefits</h2>
-        <ul className="list-disc list-inside space-y-2 text-gray-700 text-lg">
-          <li>Relieves constipation & bloating</li>
-          <li>Detoxifies the colon</li>
-          <li>Reduces chronic pain</li>
-          <li>Improves digestion</li>
-          <li>Promotes strength & immunity</li>
-        </ul>
-
-        {/* Booking */}
-        <motion.div
-          className="mt-10 flex justify-center"
-          initial={{ scale: 0.5, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
-        >
-          <a
-            href="/contact"
-            className="px-8 py-4 bg-green-600 text-white rounded-xl text-xl hover:bg-green-700 transition-all"
+          <motion.h1
+            variants={fadeUp}
+            className="text-5xl md:text-7xl font-bold mb-6"
           >
-            Book Appointment
-          </a>
+            Basti
+            <span className="block text-green-200">Enema Therapy</span>
+          </motion.h1>
+
+          <motion.p
+            variants={fadeUp}
+            className="text-xl md:text-2xl text-green-100 max-w-3xl mx-auto"
+          >
+            Essential Panchakarma procedure for cleansing and balancing Vata dosha through medicated enema.
+          </motion.p>
+
+          <motion.div
+            variants={fadeUp}
+            className="flex flex-col sm:flex-row gap-4 justify-center mt-6"
+          >
+            <Button
+              asChild
+              size="lg"
+              className="bg-white text-green-700 hover:bg-green-50 rounded-full px-8 py-6 text-lg shadow-xl"
+            >
+              <Link href="/contact">Book Consultation</Link>
+            </Button>
+
+            <Button
+              asChild
+              variant="outline"
+              size="lg"
+              className="border-white text-green-700 hover:bg-white rounded-full px-8 py-6 text-lg shadow-xl"
+            >
+              <Link href="/packages">View Packages</Link>
+            </Button>
+          </motion.div>
         </motion.div>
-      </motion.section>
+      </section>
 
-      {/* Contact Card */}
-      <motion.section
-        className="mt-16 bg-green-50 rounded-2xl p-6 shadow-md"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-      >
-        <h3 className="text-2xl font-semibold mb-4">Contact Us</h3>
+      {/* OVERVIEW */}
+      <section className="py-20 px-6 md:px-16 max-w-6xl mx-auto">
+        <motion.div
+          variants={container}
+          initial="hidden"
+          whileInView="visible"
+          className="grid lg:grid-cols-2 gap-12 items-center"
+        >
+          <motion.div variants={fadeUp}>
+            <h2 className="text-4xl font-bold text-green-700 mb-6">
+              Understanding Basti Therapy
+            </h2>
+            <p className="text-lg text-gray-700 mb-4">
+              Basti (Enema Therapy) is one of the most essential Panchakarma procedures,
+              primarily focused on cleansing and balancing the Vata dosha. This therapy
+              involves administering medicated oils or herbal decoctions through the
+              rectum to eliminate toxins accumulated in the colon and other parts of the
+              body.
+            </p>
+            <p className="text-lg text-gray-700">
+              It is particularly effective for chronic constipation, neurological disorders,
+              joint and bone-related issues, arthritis, sciatica, and various digestive weaknesses.
+            </p>
+          </motion.div>
 
-        <div className="space-y-3 text-gray-700 text-lg">
-          <p className="flex gap-3 items-center">
-            <MapPin size={20} /> Sector 15 – Gurgaon
-          </p>
+          <motion.div variants={fadeUp}>
+            <Card className="shadow-xl bg-white/80 backdrop-blur-sm">
+              <CardContent className="text-center py-10">
+                <Activity className="w-16 h-16 text-green-600 mx-auto mb-4" />
+                <h3 className="text-2xl font-bold text-green-800 mb-2">
+                  Deep Cleansing
+                </h3>
+                <p className="text-gray-600">
+                  Essential therapy for Vata balance and detoxification
+                </p>
+              </CardContent>
+            </Card>
+          </motion.div>
+        </motion.div>
+      </section>
 
-          <p className="flex gap-3 items-center">
-            <Phone size={20} /> +91 98765 43210
-          </p>
-
-          <p className="flex gap-3 items-center">
-            <Mail size={20} /> contact@ayulife.co.in
-          </p>
+      {/* BENEFITS */}
+      <section className="py-20 bg-gradient-to-r from-green-50 to-emerald-50 px-6 md:px-16">
+        <div className="max-w-6xl mx-auto text-center mb-16">
+          <Badge className="mb-4 bg-green-100 text-green-800">
+            Benefits
+          </Badge>
+          <h2 className="text-4xl font-bold text-green-800 mb-4">
+            Why Basti Therapy?
+          </h2>
         </div>
-      </motion.section>
-    </SectionWrapper>
-  );
-};
 
-export default BastiEnema;
+        <motion.div
+          variants={container}
+          initial="hidden"
+          whileInView="visible"
+          className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
+        >
+          {benefits.map((item, i) => (
+            <motion.div key={i} variants={fadeUp}>
+              <Card className="bg-white/80 p-4 hover:shadow-xl border-0">
+                <CardHeader className="text-center">
+                  <div className="w-16 h-16 bg-green-600 rounded-full mx-auto flex items-center justify-center text-white">
+                    <item.icon className="w-8 h-8" />
+                  </div>
+                  <CardTitle className="text-xl text-green-800">
+                    {item.title}
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <CardDescription className="text-center text-gray-600">
+                    {item.description}
+                  </CardDescription>
+                </CardContent>
+              </Card>
+            </motion.div>
+          ))}
+        </motion.div>
+      </section>
+
+     
+      {/* CTA */}
+      <section className="py-20 text-center bg-gradient-to-r from-green-700 via-green-800 to-green-900 text-white">
+        <motion.h3
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="visible"
+          className="text-4xl md:text-5xl font-bold mb-6"
+        >
+          Ready To Experience Healing?
+        </motion.h3>
+
+        <motion.div
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="visible"
+          className="flex flex-col sm:flex-row gap-6 justify-center"
+        >
+          <Button
+            asChild
+            size="lg"
+            className="bg-white text-green-700 hover:bg-green-50 px-10 py-6 rounded-full font-semibold"
+          >
+            <Link href="/contact">Book Consultation</Link>
+          </Button>
+
+          <Button
+            asChild
+            variant="outline"
+            size="lg"
+            className="border-2 border-white text-green-700 hover:bg-white hover:text-green-700 px-10 py-6 rounded-full font-semibold"
+          >
+            <Link href="/packages">View Packages</Link>
+          </Button>
+        </motion.div>
+      </section>
+    </div>
+  );
+}
+

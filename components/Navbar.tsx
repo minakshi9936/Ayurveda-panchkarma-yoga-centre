@@ -34,19 +34,16 @@ export default function Navbar() {
     { label: 'Abhyanga', href: '/therapies/abhyanga' },
     { label: 'Agnikarma', href: '/therapies/agnikarma' },
     { label: 'Basti (Enema)', href: '/therapies/basti-enema' },
-    { label: 'Body Scrub Massage', href: '/therapy#body-scrub-massage' },
-    { label: 'Griva Vasthi', href: '/therapy#griva-vasthi' },
-    { label: 'Herbal Hair Pack', href: '/therapy#herbal-hair-pack' },
-    { label: 'Janu Vasthi', href: '/therapy#janu-vasthi' },
-    { label: 'Kati Vasti', href: '/therapy#kati-vasti' },
-    { label: 'Kerala Potli', href: '/therapy#kerala-potli' },
-    { label: 'Others', href: '/therapy#others' },
+    { label: 'Body Scrub Massage', href: '/therapies/body-scrub-massage' },
+    { label: 'Griva Vasthi', href: '/therapies/griva-vasthi' },
+    { label: 'Herbal Hair Pack', href: '/therapies/herbal-hair-pack' },
+    { label: 'Janu Vasthi', href: '/therapies/janu-vasthi' },
+    { label: 'Kati Vasti', href: '/therapies/kati-vasti' },
+    { label: 'Kerala Potli', href: '/therapies/kerala-potli' },
+    { label: 'Others', href: '/therapies/others' },
   ];
 
-  const reviewsMenu = [
-    { label: 'Reviews', href: '/reviews' },
-    { label: 'Rewards', href: '/rewards' },
-  ];
+
 
   const handleDropdownToggle = (menu: string) => {
     setActiveDropdown(activeDropdown === menu ? null : menu);
@@ -125,6 +122,16 @@ export default function Navbar() {
                 )}
               </div>
 
+               {/* Yoga */}
+
+              <Link
+                href="/yoga"
+                className="px-4 py-2 text-primary-foreground font-medium hover:text-accent relative group"
+              >
+                Yoga
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-accent group-hover:w-full transition-all duration-300" />
+              </Link>
+
               {/* Packages */}
 
               <Link
@@ -136,28 +143,13 @@ export default function Navbar() {
               </Link>
 
               {/* Reviews & Rewards */}
-              <div
-                className="relative group"
-                onMouseEnter={() => setActiveDropdown('reviews')}
-                onMouseLeave={() => setActiveDropdown(null)}
+              <Link
+                href="/reviews-rewards"
+                className="px-4 py-2 text-primary-foreground font-medium hover:text-accent relative group"
               >
-                <button className="px-4 py-2 text-primary-foreground font-medium hover:text-accent flex items-center gap-1">
-                  Reviews & Rewards <ChevronDown className="h-4 w-4" />
-                </button>
-                {activeDropdown === 'reviews' && (
-                  <div className="absolute top-full left-0 mt-2 w-56 bg-white shadow-lg rounded-lg border border-gray-100 py-2">
-                    {reviewsMenu.map((link) => (
-                      <Link
-                        key={link.href}
-                        href={link.href}
-                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-primary/10 hover:text-primary"
-                      >
-                        {link.label}
-                      </Link>
-                    ))}
-                  </div>
-                )}
-              </div>
+                Reviews & Rewards
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-accent group-hover:w-full transition-all duration-300" />
+              </Link>
 
               {/* Book Appointment */}
               <Link
@@ -195,7 +187,6 @@ export default function Navbar() {
               {[
                 { title: 'Treatments', menu: treatmentsMenu },
                 { title: 'Therapy', menu: therapyMenu },
-                { title: 'Reviews & Rewards', menu: reviewsMenu },
               ].map((section) => (
                 <div key={section.title}>
                   <button
@@ -209,12 +200,13 @@ export default function Navbar() {
                       }`}
                     />
                   </button>
-                  {activeDropdown === section.title.toLowerCase() && (
+                  {activeDropdown === section.title.toLowerCase() && section.menu && (
                     <div className="pl-4 space-y-1">
                       {section.menu.map((link) => (
                         <Link
                           key={link.href}
                           href={link.href}
+                          onClick={() => setActiveDropdown(null)}
                           className="block py-2 text-sm text-gray-600 hover:text-primary"
                         >
                           {link.label}
@@ -224,6 +216,21 @@ export default function Navbar() {
                   )}
                 </div>
               ))}
+
+              {/* Yoga Link */}
+              <Link href="/yoga" className="block py-3 text-primary-foreground hover:text-accent font-medium">
+                Yoga
+              </Link>
+
+              {/* Packages Link */}
+              <Link href="/packages" className="block py-3 text-primary-foreground hover:text-accent font-medium">
+                Packages
+              </Link>
+
+              {/* Reviews & Rewards Link */}
+              <Link href="/reviews-rewards" className="block py-3 text-primary-foreground hover:text-accent font-medium">
+                Reviews & Rewards
+              </Link>
 
               <Link
                 href="https://wa.me/916391421660?text=Hello%20I%20want%20to%20book%20an%20appointment"

@@ -116,7 +116,7 @@ export default function Home() {
                 className="absolute inset-0 bg-cover bg-center"
                 style={{
                   backgroundImage:
-                    'url(https://images.pexels.com/photos/3935320/pexels-photo-3935320.jpeg?auto=compress&cs=tinysrgb&w=800)',
+                    'url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmk1MrMXH_XgvAtCv3mF5q9ijkxR3_MbaGdA&s)',
                 }}
               />
             </div>

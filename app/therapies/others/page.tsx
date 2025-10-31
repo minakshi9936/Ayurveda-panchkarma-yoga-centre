@@ -21,7 +21,7 @@ import {
   ArrowRight,
 } from "lucide-react";
 
-export default function AbhyangaPage() {
+export default function OtherTherapiesPage() {
   const fadeUp = {
     hidden: { opacity: 0, y: 30 },
     visible: { opacity: 1, y: 0 },
@@ -38,57 +38,65 @@ export default function AbhyangaPage() {
   const benefits = [
     {
       icon: Activity,
-      title: "Detoxifies Body",
+      title: "Personalized Care",
       description:
-        "Enhances blood circulation & helps flush toxins from your system",
+        "Customized therapies based on individual needs",
     },
     {
       icon: Heart,
-      title: "Rejuvenates Mind & Body",
-      description: "Deeply relaxing, improves mental clarity",
+      title: "Holistic Healing",
+      description: "Comprehensive approach to wellness",
     },
     {
       icon: Shield,
-      title: "Boosts Immunity",
-      description: "Enhances body’s resistance to illness",
+      title: "Natural Remedies",
+      description: "Traditional herbal treatments",
     },
     {
       icon: Sparkles,
-      title: "Glowing Skin",
-      description: "Improves complexion & nourishes tissues",
+      title: "Stress Relief",
+      description: "Deep relaxation and rejuvenation",
     },
     {
       icon: Users,
-      title: "Balances Doshas",
-      description: "Restores harmony of Vata, Pitta, Kapha",
+      title: "Expert Guidance",
+      description: "Professional Ayurvedic consultation",
     },
     {
       icon: Clock,
-      title: "Better Sleep",
-      description: "Helps in sleep disorders & fatigue",
+      title: "Long-term Benefits",
+      description: "Sustainable health improvements",
     },
   ];
 
   const treatments = [
     {
-      name: "Full Body Massage",
+      name: "Herbal Steam Therapy",
       description:
-        "Warm herbal oils are gently massaged for complete rejuvenation.",
-      duration: "60 minutes",
-      benefits: ["Reduces fatigue", "Improves circulation", "Relaxes body"],
+        "Therapeutic steam treatment using medicinal herbs for detoxification and improved circulation.",
+      duration: "30-45 minutes",
+      benefits: ["Detoxification", "Improved circulation", "Skin health"],
     },
     {
-      name: "Shiro Abhyanga",
+      name: "Head Oil Treatments",
       description:
-        "Head massage to reduce stress, improve sleep & manage headaches.",
-      duration: "20–30 minutes",
-      benefits: ["Calms mind", "Relieves migraines", "Improves sleep"],
+        "Specialized oil treatments for scalp health, stress relief, and mental clarity.",
+      duration: "45-60 minutes",
+      benefits: ["Stress relief", "Mental clarity", "Scalp health"],
     },
     {
-      name: "Pada Abhyanga",
-      description: "Foot massage to relax nerves & stimulate energy flow.",
-      duration: "20 minutes",
-      benefits: ["Improves sleep", "Strengthens nerves", "Reduces stress"],
+      name: "Rejuvenation Massage",
+      description:
+        "Full-body massage using traditional Ayurvedic techniques for complete relaxation.",
+      duration: "60-90 minutes",
+      benefits: ["Deep relaxation", "Improved sleep", "Vitality boost"],
+    },
+    {
+      name: "Customized Combinations",
+      description:
+        "Personalized therapy combinations designed for specific health conditions and goals.",
+      duration: "Varies",
+      benefits: ["Targeted healing", "Comprehensive care", "Optimal results"],
     },
   ];
 
@@ -100,7 +108,7 @@ export default function AbhyangaPage() {
           className="absolute inset-0 bg-cover bg-center"
           style={{
             backgroundImage:
-              "url('https://images.pexels.com/photos/3865792/pexels-photo-3865792.jpeg?auto=compress&cs=tinysrgb&w=1920')",
+              "url('https://images.pexels.com/photos/3616955/pexels-photo-3616955.jpeg?auto=compress&cs=tinysrgb&w=1920')",
           }}
         />
         <div className="absolute inset-0 bg-gradient-to-r from-green-900/90 via-green-800/80 to-green-900/90"></div>
@@ -113,7 +121,7 @@ export default function AbhyangaPage() {
         >
           <motion.div variants={fadeUp}>
             <Badge className="bg-white/20 text-white border-white/30 mb-4">
-              Ayurvedic Therapy
+              Ayurvedic Therapies
             </Badge>
           </motion.div>
 
@@ -121,16 +129,15 @@ export default function AbhyangaPage() {
             variants={fadeUp}
             className="text-5xl md:text-7xl font-bold mb-6"
           >
-            Abhyanga
-            <span className="block text-green-200">Full Body Oil Massage</span>
+            Other Therapies
+            <span className="block text-green-200">Customized Healing</span>
           </motion.h1>
 
           <motion.p
             variants={fadeUp}
             className="text-xl md:text-2xl text-green-100 max-w-3xl mx-auto"
           >
-            Ancient Ayurvedic oil therapy that nourishes, relaxes, strengthens
-            & detoxifies your entire body.
+            Discover additional Ayurvedic therapies customized for your unique wellness journey.
           </motion.p>
 
           <motion.div
@@ -167,17 +174,18 @@ export default function AbhyangaPage() {
         >
           <motion.div variants={fadeUp}>
             <h2 className="text-4xl font-bold text-green-700 mb-6">
-              Understanding Abhyanga
+              Personalized Ayurvedic Care
             </h2>
             <p className="text-lg text-gray-700 mb-4">
-              Abhyanga is a warm oil massage designed to penetrate deep into
-              tissues, relieve stress, and restore balance. The herbal oil
-              preparation is tailored to your body type (dosha) ensuring maximum
-              benefits.
+              We offer a comprehensive range of additional Ayurvedic therapies
+              carefully customized according to individual patient requirements.
+              Each therapy is thoughtfully planned based on specific health
+              conditions and personal wellness goals.
             </p>
             <p className="text-lg text-gray-700">
-              It is beneficial in fatigue, stiffness, anxiety, poor circulation,
-              skin issues, and sleep disorders.
+              Our experienced practitioners assess your unique needs to create
+              a personalized treatment plan that addresses your specific health
+              concerns and promotes overall well-being.
             </p>
           </motion.div>
 
@@ -186,10 +194,10 @@ export default function AbhyangaPage() {
               <CardContent className="text-center py-10">
                 <Activity className="w-16 h-16 text-green-600 mx-auto mb-4" />
                 <h3 className="text-2xl font-bold text-green-800 mb-2">
-                  Complete Wellness
+                  Customized Healing
                 </h3>
                 <p className="text-gray-600">
-                  Rejuvenates body, mind & nervous system
+                  Personalized therapies for optimal wellness
                 </p>
               </CardContent>
             </Card>
@@ -204,7 +212,7 @@ export default function AbhyangaPage() {
             Benefits
           </Badge>
           <h2 className="text-4xl font-bold text-green-800 mb-4">
-            Why Abhyanga?
+            Why Choose Our Therapies?
           </h2>
         </div>
 
@@ -240,10 +248,10 @@ export default function AbhyangaPage() {
       <section className="py-20 px-6 md:px-16 bg-white">
         <div className="max-w-6xl mx-auto text-center mb-16">
           <Badge className="mb-4 bg-green-100 text-green-800">
-            Types
+            Available Therapies
           </Badge>
           <h2 className="text-4xl font-bold text-green-800 mb-4">
-            Abhyanga Variants
+            Additional Treatment Options
           </h2>
         </div>
 
@@ -313,7 +321,7 @@ export default function AbhyangaPage() {
             asChild
             variant="outline"
             size="lg"
-            className="border-2 border-white text-white hover:bg-white hover:text-green-700 px-10 py-6 rounded-full font-semibold"
+            className="border-2 border-white text-green-700 hover:bg-white hover:text-green-700 px-10 py-6 rounded-full font-semibold"
           >
             <Link href="/packages">View Packages</Link>
           </Button>

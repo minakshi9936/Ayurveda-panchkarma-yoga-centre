@@ -21,7 +21,7 @@ import {
   ArrowRight,
 } from "lucide-react";
 
-export default function AbhyangaPage() {
+export default function KatiVastiPage() {
   const fadeUp = {
     hidden: { opacity: 0, y: 30 },
     visible: { opacity: 1, y: 0 },
@@ -38,57 +38,44 @@ export default function AbhyangaPage() {
   const benefits = [
     {
       icon: Activity,
-      title: "Detoxifies Body",
+      title: "Back Pain Relief",
       description:
-        "Enhances blood circulation & helps flush toxins from your system",
+        "Reduces chronic lower back pain effectively",
     },
     {
       icon: Heart,
-      title: "Rejuvenates Mind & Body",
-      description: "Deeply relaxing, improves mental clarity",
+      title: "Spinal Flexibility",
+      description: "Improves spinal mobility and range of motion",
     },
     {
       icon: Shield,
-      title: "Boosts Immunity",
-      description: "Enhances body’s resistance to illness",
+      title: "Muscle Strengthening",
+      description: "Strengthens back muscles and core stability",
     },
     {
       icon: Sparkles,
-      title: "Glowing Skin",
-      description: "Improves complexion & nourishes tissues",
+      title: "Sciatica Relief",
+      description: "Relieves sciatic nerve pain and discomfort",
     },
     {
       icon: Users,
-      title: "Balances Doshas",
-      description: "Restores harmony of Vata, Pitta, Kapha",
+      title: "Anti-inflammatory",
+      description: "Reduces inflammation and swelling",
     },
     {
       icon: Clock,
-      title: "Better Sleep",
-      description: "Helps in sleep disorders & fatigue",
+      title: "Better Circulation",
+      description: "Improves blood flow to lumbar region",
     },
   ];
 
   const treatments = [
     {
-      name: "Full Body Massage",
+      name: "Kati Vasti Therapy",
       description:
-        "Warm herbal oils are gently massaged for complete rejuvenation.",
-      duration: "60 minutes",
-      benefits: ["Reduces fatigue", "Improves circulation", "Relaxes body"],
-    },
-    {
-      name: "Shiro Abhyanga",
-      description:
-        "Head massage to reduce stress, improve sleep & manage headaches.",
-      duration: "20–30 minutes",
-      benefits: ["Calms mind", "Relieves migraines", "Improves sleep"],
-    },
-    {
-      name: "Pada Abhyanga",
-      description: "Foot massage to relax nerves & stimulate energy flow.",
-      duration: "20 minutes",
-      benefits: ["Improves sleep", "Strengthens nerves", "Reduces stress"],
+        "Specialized treatment retaining warm medicated oil on the lower back for targeted pain relief and spinal health.",
+      duration: "30-45 minutes",
+      benefits: ["Reduces back pain", "Improves flexibility", "Strengthens muscles"],
     },
   ];
 
@@ -100,7 +87,7 @@ export default function AbhyangaPage() {
           className="absolute inset-0 bg-cover bg-center"
           style={{
             backgroundImage:
-              "url('https://images.pexels.com/photos/3865792/pexels-photo-3865792.jpeg?auto=compress&cs=tinysrgb&w=1920')",
+              "url('https://images.pexels.com/photos/4506219/pexels-photo-4506219.jpeg?auto=compress&cs=tinysrgb&w=1920')",
           }}
         />
         <div className="absolute inset-0 bg-gradient-to-r from-green-900/90 via-green-800/80 to-green-900/90"></div>
@@ -121,16 +108,15 @@ export default function AbhyangaPage() {
             variants={fadeUp}
             className="text-5xl md:text-7xl font-bold mb-6"
           >
-            Abhyanga
-            <span className="block text-green-200">Full Body Oil Massage</span>
+            Kati Vasti
+            <span className="block text-green-200">Lower Back Therapy</span>
           </motion.h1>
 
           <motion.p
             variants={fadeUp}
             className="text-xl md:text-2xl text-green-100 max-w-3xl mx-auto"
           >
-            Ancient Ayurvedic oil therapy that nourishes, relaxes, strengthens
-            & detoxifies your entire body.
+            Kati Vasti relieves chronic lower back pain through warm medicated oil therapy that nurtures tissues and reduces stiffness.
           </motion.p>
 
           <motion.div
@@ -167,17 +153,17 @@ export default function AbhyangaPage() {
         >
           <motion.div variants={fadeUp}>
             <h2 className="text-4xl font-bold text-green-700 mb-6">
-              Understanding Abhyanga
+              Understanding Kati Vasti
             </h2>
             <p className="text-lg text-gray-700 mb-4">
-              Abhyanga is a warm oil massage designed to penetrate deep into
-              tissues, relieve stress, and restore balance. The herbal oil
-              preparation is tailored to your body type (dosha) ensuring maximum
-              benefits.
+              Kati Vasti is an Ayurvedic lower back therapy using medicated oil
+              retained on the lumbar region to relieve pain, nourish tissues, and
+              treat musculoskeletal disorders. It is effective for chronic back
+              pain, disc problems, and sciatica.
             </p>
             <p className="text-lg text-gray-700">
-              It is beneficial in fatigue, stiffness, anxiety, poor circulation,
-              skin issues, and sleep disorders.
+              This therapy creates a therapeutic pool of warm oil that penetrates deep
+              into spinal tissues, reducing inflammation and promoting natural healing.
             </p>
           </motion.div>
 
@@ -186,10 +172,10 @@ export default function AbhyangaPage() {
               <CardContent className="text-center py-10">
                 <Activity className="w-16 h-16 text-green-600 mx-auto mb-4" />
                 <h3 className="text-2xl font-bold text-green-800 mb-2">
-                  Complete Wellness
+                  Spinal Healing
                 </h3>
                 <p className="text-gray-600">
-                  Rejuvenates body, mind & nervous system
+                  Targeted therapy for lower back pain and spinal health
                 </p>
               </CardContent>
             </Card>
@@ -204,7 +190,7 @@ export default function AbhyangaPage() {
             Benefits
           </Badge>
           <h2 className="text-4xl font-bold text-green-800 mb-4">
-            Why Abhyanga?
+            Why Kati Vasti?
           </h2>
         </div>
 
@@ -236,53 +222,6 @@ export default function AbhyangaPage() {
         </motion.div>
       </section>
 
-      {/* TREATMENTS */}
-      <section className="py-20 px-6 md:px-16 bg-white">
-        <div className="max-w-6xl mx-auto text-center mb-16">
-          <Badge className="mb-4 bg-green-100 text-green-800">
-            Types
-          </Badge>
-          <h2 className="text-4xl font-bold text-green-800 mb-4">
-            Abhyanga Variants
-          </h2>
-        </div>
-
-        <motion.div
-          variants={container}
-          initial="hidden"
-          whileInView="visible"
-          className="grid md:grid-cols-2 gap-8"
-        >
-          {treatments.map((t, i) => (
-            <motion.div key={i} variants={fadeUp}>
-              <Card className="bg-gradient-to-br from-white to-green-50 p-4 hover:shadow-xl">
-                <CardHeader>
-                  <CardTitle className="text-2xl text-green-800">
-                    {t.name}
-                  </CardTitle>
-                  <Badge className="text-green-600 border-green-600">
-                    {t.duration}
-                  </Badge>
-                </CardHeader>
-                <CardContent>
-                  <p className="mb-3 text-gray-700">{t.description}</p>
-                  <h4 className="font-semibold text-green-700 mb-2">
-                    Key Benefits:
-                  </h4>
-                  <ul className="space-y-1">
-                    {t.benefits.map((b, i) => (
-                      <li key={i} className="flex items-center text-gray-600">
-                        <CheckCircle className="w-4 h-4 text-green-500 mr-2" />
-                        {b}
-                      </li>
-                    ))}
-                  </ul>
-                </CardContent>
-              </Card>
-            </motion.div>
-          ))}
-        </motion.div>
-      </section>
 
       {/* CTA */}
       <section className="py-20 text-center bg-gradient-to-r from-green-700 via-green-800 to-green-900 text-white">
@@ -313,7 +252,7 @@ export default function AbhyangaPage() {
             asChild
             variant="outline"
             size="lg"
-            className="border-2 border-white text-white hover:bg-white hover:text-green-700 px-10 py-6 rounded-full font-semibold"
+            className="border-2 border-white text-green-700 hover:bg-white hover:text-green-700 px-10 py-6 rounded-full font-semibold"
           >
             <Link href="/packages">View Packages</Link>
           </Button>
