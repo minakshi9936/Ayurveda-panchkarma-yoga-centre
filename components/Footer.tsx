@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Phone, Mail, MapPin, Facebook, Instagram, Twitter, Leaf } from 'lucide-react';
+import { Phone, Mail, MapPin, Facebook, Instagram, Twitter, Leaf, Settings } from 'lucide-react';
 
 export default function Footer() {
   return (
@@ -108,10 +108,17 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-primary-foreground/20 mt-8 pt-8 text-center">
+        <div className="border-t border-primary-foreground/20 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-sm text-primary-foreground/70">
             &copy; {new Date().getFullYear()} AyurVeda Centre. All rights reserved.
           </p>
+          <Link
+            href="/admin"
+            className="flex items-center space-x-2 mt-4 md:mt-0 text-sm hover:text-accent transition-colors"
+          >
+            <Settings className="h-4 w-4" />
+            <span>Admin Panel</span>
+          </Link>
         </div>
       </div>
     </footer>

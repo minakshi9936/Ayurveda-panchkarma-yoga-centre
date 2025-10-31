@@ -1,9 +1,9 @@
-# Navbar Update Tasks
+# Admin Panel Implementation TODO
 
-- [x] Import useRef and useEffect from React in Navbar.tsx
-- [x] Add useRef for the nav element
-- [x] Add useEffect to handle click outside for closing dropdowns (desktop)
-- [x] Add useEffect to handle click outside for closing mobile menu
-- [x] Update mobile dropdown links onClick to close menu (setIsOpen(false))
-- [x] Update mobile regular links (Home, Yoga, Packages, etc.) onClick to close menu (setIsOpen(false))
-- [x] Test the navbar behavior on desktop and mobile
+## Tasks
+- [x] Create app/admin/page.tsx: Login page with form, hardcoded credentials, localStorage auth, redirect to dashboard
+- [x] Create app/admin/dashboard/page.tsx: Protected dashboard with sidebar, topbar, logout, placeholder sections
+- [x] Test login flow: Enter credentials, redirect to dashboard
+- [x] Test auth guard: Access dashboard without login redirects to /admin
+- [x] Test logout: Clears localStorage, redirects to /admin
+- [x] Test responsiveness: Ensure UI works on mobile and desktop
