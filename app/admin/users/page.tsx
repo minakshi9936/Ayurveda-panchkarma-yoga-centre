@@ -11,6 +11,7 @@ import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, D
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Badge } from '@/components/ui/badge';
 import { Plus, Edit, Trash2, ArrowLeft } from 'lucide-react';
+import AdminLayout from '@/components/AdminLayout';
 
 interface User {
   id: string;
@@ -118,15 +119,11 @@ export default function UsersManagement() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-background via-primary/5 to-accent/10">
+    <div>
       {/* Header */}
       <header className="bg-card/80 backdrop-blur-sm border-b border-border/50 px-4 py-4 flex justify-between items-center shadow-sm">
         <div className="flex items-center space-x-3">
-          <Button variant="ghost" size="sm" onClick={() => router.push('/admin/dashboard')}>
-            <ArrowLeft className="w-4 h-4 mr-2" />
-            Back to Dashboard
-          </Button>
-          <h1 className="text-xl font-bold text-foreground">Users Management</h1>
+          <h1 className="text-xl font-bold text-foreground">Registered Users</h1>
         </div>
         <Dialog open={isAddDialogOpen} onOpenChange={setIsAddDialogOpen}>
           <DialogTrigger asChild>
@@ -192,7 +189,7 @@ export default function UsersManagement() {
       </header>
 
       {/* Main Content */}
-      <main className="p-8">
+      <main className="p-4 md:p-8">
         <Card>
           <CardHeader>
             <CardTitle>Registered Users</CardTitle>

@@ -50,7 +50,7 @@ export default function Navbar() {
     setActiveDropdown(activeDropdown === menu ? null : menu);
   };
 
-  // Close dropdowns and mobile menu on click outside
+ 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (navRef.current && !navRef.current.contains(event.target as Node)) {
