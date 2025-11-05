@@ -6,7 +6,7 @@ import ClientLayout from '@/components/ClientLayout';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'AyurVeda Centre - Authentic Panchakarma & Yoga',
+  title: 'Panchakarma Centre - Authentic Panchakarma & Yoga',
   description: 'Experience authentic Ayurvedic healing with Panchakarma therapies and Yoga. Over 25 years of trusted holistic care.',
 };
 
