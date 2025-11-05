@@ -33,14 +33,14 @@ export default function TopBar() {
               className="flex items-center gap-1.5 hover:text-accent transition-colors"
             >
               <Phone className="h-4 w-4" />
-              <span className="font-medium">+91 98765 43210</span>
+              <span className="font-medium">+91 6389202030</span>
             </a>
             <a
-              href="mailto:info@ayulife.co.in"
+              href="mailto:info@citywitty.com"
               className="hidden sm:flex items-center gap-1.5 hover:text-accent transition-colors"
             >
               <Mail className="h-4 w-4" />
-              <span className="font-medium">info@ayulife.co.in</span>
+              <span className="font-medium">info@citywitty.com</span>
             </a>
           </div>
         </div>

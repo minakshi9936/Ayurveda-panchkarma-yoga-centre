@@ -79,7 +79,7 @@ export default function Navbar() {
             {/* Logo */}
             <Link href="/" className="flex items-center space-x-2">
               <Leaf className="h-8 w-8 text-primary-foreground" />
-              <span className="text-2xl font-bold text-primary-foreground">AyurVeda Centre</span>
+              <span className="text-2xl font-bold text-primary-foreground">Panchkarma Centre</span>
             </Link>
 
             {/* Desktop Menu */}
@@ -172,7 +172,7 @@ export default function Navbar() {
 
               {/* Book Appointment */}
               <Link
-                href="https://wa.me/916391421660?text=Hello%20I%20want%20to%20book%20an%20appointment"
+                href="https://wa.me/916389202030?text=Hello%20I%20want%20to%20book%20an%20appointment"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-4 py-2 bg-accent text-accent-foreground rounded-lg hover:bg-accent/90 flex items-center gap-2 font-medium"
@@ -255,7 +255,7 @@ export default function Navbar() {
               </Link>
 
               <Link
-                href="https://wa.me/916391421660?text=Hello%20I%20want%20to%20book%20an%20appointment"
+                href="https://wa.me/916389202030?text=Hello%20I%20want%20to%20book%20an%20appointment"
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => setIsOpen(false)}

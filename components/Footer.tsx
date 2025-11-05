@@ -62,15 +62,15 @@ export default function Footer() {
             <ul className="space-y-3">
               <li className="flex items-start space-x-2">
                 <MapPin className="h-5 w-5 flex-shrink-0 mt-0.5" />
-                <span className="text-sm">123 Wellness Road, Green Valley, Kerala 682001</span>
+                <span className="text-sm">123 citywitty office, india</span>
               </li>
               <li className="flex items-center space-x-2">
                 <Phone className="h-5 w-5 flex-shrink-0" />
-                <span className="text-sm">+91 98765 43210</span>
+                <span className="text-sm">+91 6389202030</span>
               </li>
               <li className="flex items-center space-x-2">
                 <Mail className="h-5 w-5 flex-shrink-0" />
-                <span className="text-sm">info@ayurvedacentre.com</span>
+                <span className="text-sm">info@citywitty.com</span>
               </li>
             </ul>
           </div>

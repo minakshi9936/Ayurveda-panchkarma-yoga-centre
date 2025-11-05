@@ -38,14 +38,14 @@ const FloatingChat = () => {
           </div>
           <div className="space-y-3">
             <a
-              href="tel:+1234567890"
+              href="tel:+6389202030"
               className="flex items-center p-3 bg-gray-50 hover:bg-gray-100 rounded-md transition-colors duration-200 group"
             >
               <Phone size={20} className="text-green-600 mr-3 group-hover:text-green-700" />
               <span className="text-gray-700 group-hover:text-gray-900">Call Us</span>
             </a>
             <a
-              href="https://wa.me/1234567890"
+              href="https://wa.me/6389202030"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center p-3 bg-gray-50 hover:bg-gray-100 rounded-md transition-colors duration-200 group"
@@ -54,7 +54,7 @@ const FloatingChat = () => {
               <span className="text-gray-700 group-hover:text-gray-900">WhatsApp</span>
             </a>
             <a
-              href="mailto:info@example.com"
+              href="mailto:info@citywitty.com"
               className="flex items-center p-3 bg-gray-50 hover:bg-gray-100 rounded-md transition-colors duration-200 group"
             >
               <Mail size={20} className="text-green-600 mr-3 group-hover:text-green-700" />

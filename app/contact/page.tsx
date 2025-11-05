@@ -55,8 +55,8 @@ export default function ContactPage() {
                 <CardDescription>Call us during business hours</CardDescription>
               </CardHeader>
               <CardContent>
-                <p className="text-lg font-semibold text-foreground">+91 98765 43210</p>
-                <p className="text-sm text-muted-foreground mt-1">+91 98765 43211</p>
+                <p className="text-lg font-semibold text-foreground">+91 6389202030</p>
+                <p className="text-sm text-muted-foreground mt-1">+91 6389202030</p>
               </CardContent>
             </Card>
 
@@ -69,8 +69,8 @@ export default function ContactPage() {
                 <CardDescription>Send us a message anytime</CardDescription>
               </CardHeader>
               <CardContent>
-                <p className="text-lg font-semibold text-foreground">info@ayurvedacentre.com</p>
-                <p className="text-sm text-muted-foreground mt-1">appointments@ayurvedacentre.com</p>
+                <p className="text-lg font-semibold text-foreground">info@citywitty.com</p>
+                <p className="text-sm text-muted-foreground mt-1">appointments@citywitty.com</p>
               </CardContent>
             </Card>
 
@@ -83,8 +83,8 @@ export default function ContactPage() {
                 <CardDescription>Visit our centre</CardDescription>
               </CardHeader>
               <CardContent>
-                <p className="text-foreground">123 Wellness Road</p>
-                <p className="text-foreground">Green Valley, Kerala 682001</p>
+                <p className="text-foreground">123 </p>
+                <p className="text-foreground">citywitty office</p>
                 <p className="text-foreground">India</p>
               </CardContent>
             </Card>
@@ -120,7 +120,7 @@ export default function ContactPage() {
                       name="email"
                       type="email"
                       required
-                      placeholder="your.email@example.com"
+                      placeholder="info@citywitty.com"
                       value={formData.email}
                       onChange={handleChange}
                     />
@@ -133,7 +133,7 @@ export default function ContactPage() {
                       name="phone"
                       type="tel"
                       required
-                      placeholder="+91 98765 43210"
+                      placeholder="+91 6389202030"
                       value={formData.phone}
                       onChange={handleChange}
                     />
@@ -203,7 +203,7 @@ export default function ContactPage() {
                   <p className="text-primary-foreground/90 mb-2">
                     For urgent medical consultations or emergencies, please call our 24/7 helpline:
                   </p>
-                  <p className="text-2xl font-bold">+91 98765 99999</p>
+                  <p className="text-2xl font-bold">+91 6389202030</p>
                 </CardContent>
               </Card>
             </div>
