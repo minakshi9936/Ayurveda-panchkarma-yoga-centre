@@ -229,7 +229,7 @@ export default function Navbar() {
                             setActiveDropdown(null);
                             setIsOpen(false);
                           }}
-                          className="block py-2 text-sm text-gray-600 hover:text-primary"
+                          className="block py-2 text-sm text-primary-foreground hover:text-accent"
                         >
                           {link.label}
                         </Link>
